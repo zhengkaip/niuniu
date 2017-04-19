@@ -2,10 +2,20 @@
 .box{width:1200px;margin-left:auto;margin-right: auto;}
 
 .header{height:60px;}
+.header .select{position: relative;}
+.header .options{position: absolute;top:60px;left:0;z-index:10;}
 .header .select p{height:100%;line-height: 60px;padding-right:23px;margin-right:18px;color:#f53964;font-size:14px;background:url("../images/down.png") no-repeat right center;cursor: pointer;}
 .header .nav li{height:100%;padding-top:20px;}
 .header .nav a{height:15px;line-height:15px;padding:0 25px;color:#333;font-size:14px;border-right:1px solid #333;}
 .header .nav li:last-child a{border-right:none;}
+
+.banner{position:relative;width:100%;min-width:1200px;overflow: hidden;}
+.banner ul{position: relative;}
+.banner li{width:33.33%;}
+.banner a{display:block;width:100%;min-width:1200px;height:420px;}
+.banner_index{position: absolute;bottom:50px;left:50%;}
+.banner_index span{display:inline-block;width:15px;height:15px;margin-left:10px;background: #fff;border-radius: 50%;opacity:0.5;cursor: pointer;}
+.banner_index .active{opacity:1;}
 
 .wrap{overflow: hidden;}
 .game_items{width:806px;padding:4px 36px 24px 20px;margin-right:10px;background:#fff;}

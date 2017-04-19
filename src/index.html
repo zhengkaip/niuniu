@@ -30,13 +30,13 @@
         </div>
     </div>
     <div class="banner" id="b06">
-        <ul class="clear">
-            <li class="fl"><img class="sliderimg" src="images/banner/index1.png"alt="" width="100%"></li>
-            <li class="fl"><img class="sliderimg" src="images/banner/index1.png" alt="" width="100%"></li>
-            <li class="fl"><img class="sliderimg" src="images/banner/index1.png" alt="" width="100%"></li>
-            <li class="fl"><img class="sliderimg" src="images/banner/index1.png" alt="" width="100%"></li>
-            <li class="fl"><img class="sliderimg" src="images/banner/index1.png" alt="" width="100%"></li>
+        <ul class="clear banner_img">
+            <li class="fl"><a href="" style="background:url('../images/banner/index1.png') no-repeat center;"></a></li>
+            <li class="fl"><a href="" style="background:url('../images/banner/index1.png') no-repeat center;"></a></li>
+            <li class="fl"><a href="" style="background:url('../images/banner/index1.png') no-repeat center;"></a></li>
         </ul>
+        <div class="banner_index">
+        </div>
     </div>
     <div class="box wrap clear">
     	<div class="game_items fl">
@@ -130,44 +130,14 @@
     	<p>武汉勇士科技有限公司版权所有 2016-2017鄂ICP备15016317号-7</p>
     </div>
     <script src="js/jquery.min.js"></script>
-    <script src="js/unslider.min.js"></script>
+    <script src="js/carousel.js"></script>
     <script>
-    /*window.onload=function(){
-	    function imgReload()
-	    {
-	        var imgHeight = 0;
-	        var wtmp = $("body").width();
-	        $("#b06 ul li").each(function() {
-	            $(this).css({
-	                width: wtmp + "px"
-	            });
-	        });
-
-	        $(".sliderimg").each(function() {
-	            $(this).css({
-	                width: wtmp + "px"
-	            });
-	            console.log($(this).height());
-	            imgHeight = $(this).height();
-	        });
-	    }
-	    $(window).resize(function() {
-	        imgReload();
-	    });
-	    $(document).ready(function(e) {
-	        imgReload();
-	        var unslider06 = $('#b06').unslider({
-	                dots: true,
-	                fluid: true,
-	                speed:1000
-	            }),
-	            data06 = unslider06.data('unslider');
-	        $('.unslider-arrow06').click(function() {
-	            var fn = this.className.split(' ')[1];
-	            data06[fn]();
-	        });
-	    });
-    }*/
+    window.onload=function (){
+        carousel(".banner_img",".banner li",".banner_index");
+        $(".header .select p").click(function(event) {
+            $(".header .options").toggle();
+        });
+    }
     </script>
 </body>
 
