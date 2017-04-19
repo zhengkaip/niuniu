@@ -1,0 +1,27 @@
+@charset "UTF-8";
+.box{width:1200px;margin-left:auto;margin-right: auto;}
+
+.header{height:60px;}
+.header .select p{height:100%;line-height: 60px;padding-right:23px;margin-right:18px;color:#f53964;font-size:14px;background:url("../images/down.png") no-repeat right center;cursor: pointer;}
+.header .nav li{height:100%;padding-top:20px;}
+.header .nav a{height:15px;line-height:15px;padding:0 25px;color:#333;font-size:14px;border-right:1px solid #333;}
+.header .nav li:last-child a{border-right:none;}
+
+.wrap{overflow: hidden;}
+.game_items{width:806px;padding:4px 36px 24px 20px;margin-right:10px;background:#fff;}
+.game_items .title{line-height:55px;color:#333333;font-size:16px;}
+.game_item{padding:20px 0;border-bottom:1px dashed #dddddd;}
+.game_item img{width:220px;height:175px;margin-right: 32px;}
+.game_item .exp{height:175px;overflow: hidden;}
+.game_item .exp p{margin-bottom:7px;color:#666;font-size:14px;}
+
+.add_list{width:308px;padding-left:20px;background:#fff;margin-bottom:-10000px; padding-bottom:10000px;}
+.add_list .title{line-height:55px;color:#666;font-size:16px;}
+.add_list li{line-height:25px;padding-top:7px;color:#666;font-size:12px;}
+
+.footer{background:#333333;padding:14px 0;}
+.footer img{display:block;margin:0 auto;}
+.footer_nav{width:133px;margin:0 auto;padding:20px 0;}
+.footer a,.footer span{font-size:12px;color:#999;}
+.footer span{padding:0 12px;}
+.footer p{width:235px;line-height:22px;margin:0 auto 0;color:#727171;font-size:12px;text-align:center;}
