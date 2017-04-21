@@ -15,7 +15,10 @@ $(function(){
 			})
 		}else{
 			$(".footer").css({
-				"position":"static"})
+				"position":"static",
+				"left":0,
+				"margin-left":0
+			})
 		}
 	}
 })

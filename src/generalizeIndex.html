@@ -136,7 +136,9 @@
     <script src="js/carousel.js"></script>
     <script>
     window.onload=function (){
+        /*全屏轮播*/
         carousel(".banner_img",".banner li",".banner_index");
+        /*导航select选项*/
         $(".header .select p").click(function(event) {
             $(".header .options").toggle();
         });
