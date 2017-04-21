@@ -149,6 +149,12 @@
 .q_a_item .q{margin-bottom:12px;padding-left:30px;background:url("../images/Q.png") no-repeat left center;}
 .q_a_item p{line-height:18px;color:#666;font-size:12px;}
 
+.search_content{height:46px;border:1px solid #fb8a24;}
+.select_style{width:98px;}
+.select_style p{height:46px;line-height:46px;text-align:center;color:#999;font-size:14px;}
+.select_style{border-left:1px solid #ddd;border-top:1px solid #ddd;border-right:1px solid #ddd;}
+.select_style li{width:100%;line-height:30px;color:#999;font-size:14px;text-align:center;border-bottom:1px solid #ddd;background:#fff;}
+.search_content input[type="text"]{width:659px;height:46px;border-left:1px solid #b9b9b9;border:none;}
 
 .footer_bg{background:#333333;}
 .footer{padding:14px 0;}
