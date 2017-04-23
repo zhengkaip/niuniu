@@ -12,6 +12,9 @@ $(function(){
 				"bottom":0,
 				"left":"50%",
 				"margin-left":"-600px"
+			});
+			$("html,body").css({
+				"height":"100%"
 			})
 		}else{
 			$(".footer").css({

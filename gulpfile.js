@@ -21,7 +21,8 @@ gulp.task("build",function(callback){
 gulp.task("minimg",function(){
 	return gulp.src(["src/images/*.{png,jpg,gif,ico}"])
 	/*.pipe(revCollector({replaceReved:true}))*/
-	.pipe(changed("dist/images"))
+	.pipe(changed("dist/images",{extension:".png"||".jpg"||".gif"||".ico"}))
+	.pipe(debug({title: '编译:'}))
 	.pipe(minimg({
 		progressive:true,//类型：Boolean 默认：false 无损压缩jpg图片
 		optimizationLevel:5,//类型：Number  默认：3  取值范围：0-7（优化等级）
@@ -38,11 +39,12 @@ gulp.task("minimg",function(){
 })
 gulp.task("mincss",function(){
 	return gulp.src(["src/css/*.css"/*,"dist/css/*.css","dist/rev/cssmin"*/])
-	.pipe(changed("dist/css"))
+	.pipe(changed("dist/css",{extension:'.css'}))
+	.pipe(debug({title: '编译:'}))
 	.pipe(revCollector({replaceReved:true}))
 	.pipe(mincss())
 	.pipe(debug({title:"mincss"}))
-	.pipe(gulp.dest("dist/css/"))
+	.pipe(gulp.dest("dist/css"))
 	.pipe(rev())//生成版本号
 	.pipe(rev.manifest())//把版本号写到rev-manifest.json配置文件里
 	.pipe(gulp.dest("dist/rev/cssmin"))
@@ -60,22 +62,25 @@ gulp.task("mincss",function(){
 gulp.task("minjs",function(){
     return gulp.src("src/js/*.js")
    /* .pipe(revCollector({replaceReved:true}))*/
+   	.pipe(changed("dist/js",{extension:'.js'}))
+   	.pipe(debug({title: '编译:'}))
     .pipe(uglify().on("error",function(e){
     	console.log(e)
     }))//压缩js
     .pipe(debug({title:"jsmin"}))//查看处理的文件
-    .pipe(gulp.dest("dist/js/"))
+    .pipe(gulp.dest("dist/js"))
     .pipe(rev())//生成版本号
     .pipe(rev.manifest())//生成版本文件
     .pipe(gulp.dest("dist/rev/jsmin"))//将版本号文件放在dist/rev/jsmin文件里面
 })
 gulp.task("minhtml",function(){
 	return gulp.src(["src/**/*.html"/*,"dist/rev/cssmin/*.json","dist/rev/jsmin/*.json"*/])//读取文件
-	.pipe(changed("dist/*.html"))
+	.pipe(changed("dist",{extension:'.html'}))
+	.pipe(debug({title: '编译:'}))
 	.pipe(revCollector({replaceReved:true}))
 	.pipe(minhtml())
 	.pipe(debug({title:"minhtml"}))
-	.pipe(gulp.dest("dist/"))
+	.pipe(gulp.dest("dist"))
 	.pipe(rev())//生成版本号
 	.pipe(rev.manifest())
 	.pipe(gulp.dest("dist/rev/htmlmin"))
