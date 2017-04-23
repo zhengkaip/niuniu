@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+     <script src="js/jquery.min.js"></script>
+    <script src="js/update.js"></script>
+</head>
+	<p>
+	    <input type="button" value="look" onclick="look()" />
+	    <input type="button" value="clean" onclick="clean()" />
+	    <input type="button" value="ajaxSubmit" onclick="ajaxSubmit()" />
+	    <input type="file" name="test" />
+	</p>
+	<p>
+	    <input type="button" value="look1" onclick="look1()" />
+	    <input type="button" value="clean1" onclick="clean1()" />
+	    <input type="button" value="ajaxSubmit1" onclick="ajaxSubmit1()" />
+	    <input type="file" name="test1" />
+	</p>
+	<script type="text/javascript">
+	    function look() {
+	        //alert($("form input[type=file]").val())
+	        alert($("input[name=test]").upload("getFileVal"))
+	    }
+
+	    function clean() {
+	        $("input[name=test]").upload("clean")
+	    }
+
+	    function ajaxSubmit() {
+	        $("input[name=test]").upload({
+	            url: 'index.aspx',
+	            // 其他表单数据
+	            params: {
+	                name: 'pxblog'
+	            },
+	            // 上传完成后, 返回json, text
+	            dataType: 'json',
+	            onSend: function(obj, str) {
+	                return true;
+	            },
+	            // 上传之后回调
+	            onComplate: function(data) {
+	                alert(data.file);
+	            }
+	        });
+	        $("input[name=test]").upload("ajaxSubmit")
+	    }
+
+	    function look1() {
+	        //alert($("form input[type=file]").val())
+	        alert($("input[name=test1]").upload("getFileVal"))
+	    }
+
+	    function clean1() {
+	        $("input[name=test1]").upload("clean")
+	    }
+
+	    function ajaxSubmit1() {
+	        $("input[name=test1]").upload({
+	            url: 'index.aspx',
+	            // 其他表单数据
+	            params: {
+	                name: 'pxblog'
+	            },
+	            // 上传完成后, 返回json, text
+	            dataType: 'json',
+	            onSend: function(obj, str) {
+	                return true;
+	            },
+	            // 上传之后回调
+	            onComplate: function(data) {
+	                alert(data.file);
+	            }
+	        });
+	        $("input[name=test1]").upload("ajaxSubmit")
+	    }
+    </script>
+<body>
+</body>
+</html>
