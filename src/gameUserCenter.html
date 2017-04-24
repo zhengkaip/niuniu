@@ -9,6 +9,8 @@
     <meta name="keywords" content="">
     <link href="css/init.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--图片上传预览-->
+    <script src="js/update.js"></script>
 </head>
 
 <body>
@@ -18,9 +20,16 @@
             <img class="fl" src="images/slogan.png" height="60" width="280">
             <div class="fr">
                 <ul class="fl nav">
-                    <li class="fl"><a href="" title="">首页</a></li>
-                    <li class="fl active"><a href="" title="">个人中心</a></li>
-                    <li class="fl"><a href="" title="">发布代理推广意向</a></li>
+                    <li class="fl active"><a href="" title="">首页</a></li>
+                    <li class="fl"><a href="" title="">个人中心</a></li>
+                </ul>
+                <div class="fl select">
+                    <p>招募游戏代理推广</p>
+                    <ul class="options">
+                        <li>1</li>
+                    </ul>
+                </div>
+                <ul class="fl nav">
                     <li class="fl"><a href="" title="">退出</a></li>
                     <li class="fl"><a href="" title="">新手帮助</a></li>
                 </ul>
@@ -73,17 +82,21 @@
             </div>
             <div class="updata clear">
                 <div class="updata_item mb30 pl20 fl">
-                    <img class="mb30" src="images/update1.png" height="149" width="149" alt="">
+                    <div class="previewImage mb30" id="previewImage1">
+                        <img src="images/update1.png" height="149" width="149" alt="">
+                    </div>
                     <div class="file_wrap">
                         上传图片
-                        <input type="file" id="idFile1">
+                        <input type="file" onchange="previewImage(this, 'previewImage1')">
                     </div>
                 </div>
                 <div class="updata_item ml220 pl20 fl">
-                    <img class="mb30" src="images/update2.png" height="149" width="149" alt="">
+                    <div class="previewImage mb30" id="previewImage2">
+                        <img src="images/update2.png" height="149" width="149" alt="">                        
+                    </div>
                     <div class="file_wrap">
                         上传图片
-                        <input type="file">
+                        <input type="file" onchange="previewImage(this, 'previewImage2')">
                     </div>
                 </div>
             </div>
@@ -160,7 +173,7 @@
             </div>
             <p class="title">您的上线时间？</p>
             <div class="clear">
-                <input class="fl" type="text" name="" value="" placeholder="">
+                <input id="J-xl" class="fl" type="text" name="" value="" placeholder="">
             </div>
             <p class="title">请输入您运营的一款游戏名称及下载地址？</p>
             <div class="clear">
@@ -173,28 +186,32 @@
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/public.js"></script>
-    <script src="js/update.js"></script>
+    <script type="text/javascript" src="js/laydate.dev.js"></script>
     <script>
     $(function() {
-                $(".sidebar li").click(function() {
-                    var Index = $(this).index();
-                    $(this).addClass("active").siblings().removeClass("active");
-                    $(".side_content").eq(Index).removeClass("hide").siblings(".side_content").addClass("hide")
-                });
-                $(".alter").click(function() {
-                    $(".pop").removeClass('hide');
-                    if ($(this).hasClass('phone')) {
-                        $(".pop_content").eq(0).show().siblings(".pop_content").hide();
-                    } else {
-                        $(".pop_content").eq(1).show().siblings(".pop_content").hide();
-                    }
-                });
-                $(".pop_bg").click(function() {
-                    $(".pop").addClass('hide');
-                });
-                $(".file_wrap input").change(function(event) {
-                    $(this).parent().siblings("img").attr("src",$(this).val());
-                });
+        /*日期*/
+        laydate({
+            elem: '#J-xl'
+        });
+        $(".sidebar li").click(function() {
+            var Index = $(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".side_content").eq(Index).removeClass("hide").siblings(".side_content").addClass("hide")
+        });
+        $(".alter").click(function() {
+            $(".pop").removeClass('hide');
+            if ($(this).hasClass('phone')) {
+                $(".pop_content").eq(0).show().siblings(".pop_content").hide();
+            } else {
+                $(".pop_content").eq(1).show().siblings(".pop_content").hide();
+            }
+        });
+        $(".pop_bg").click(function() {
+            $(".pop").addClass('hide');
+        });
+        $(".header .select p").click(function(event) {
+            $(".header .options").toggle();
+        });
     })
     </script>
 </body>

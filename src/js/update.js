@@ -1,171 +1,50 @@
-(function ($) {
-    var log=function(str){
-        if(window.console){
-            console.log(str);
+function previewImage(file, imgBox) {
+    var MAXWIDTH = 260;
+    var MAXHEIGHT = 180;
+    var div = document.getElementById(imgBox);
+    if (file.files && file.files[0]) {
+        div.innerHTML = '<img id=imghead'+imgBox+'>';
+        var img = document.getElementById('imghead'+imgBox);
+        img.onload = function() {
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            img.width = rect.width;
+            img.height = rect.height;
+            //                 img.style.marginLeft = rect.left+'px';
+            /*img.style.marginTop = rect.top + 'px';*/
         }
+        var reader = new FileReader();
+        reader.onload = function(evt) { img.src = evt.target.result; }
+        reader.readAsDataURL(file.files[0]);
+    } else //兼容IE
+    {
+        var sFilter = 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+        file.select();
+        var src = document.selection.createRange().text;
+        var imgId="imghead"+imgBox;
+        div.innerHTML = '<img id='+imgId+'>';
+        var img = document.getElementById(imgId);
+        //img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+        status = ('rect:' + rect.top + ',' + rect.left + ',' + rect.width + ',' + rect.height);
+        div.innerHTML = "<div id=divhead style='max-width:" + rect.width + "px;height:" + rect.height + "px;margin-top:" + rect.top + "px;" + sFilter + src + "\"'></div>";
     }
-    var frameCount = 0;
-    var formName = "";
-    var iframeObj = null;
-    var state = {};
-    var colfile = null;
-    //清空值
-    function clean(target) {
-        var file = $(target);
-        var col = file.clone(true).val("");
-        file.after(col);
-        file.remove();
-        //关键说明
-        //先得到当前的对象和参数，接着进行克隆（同时克隆事件）
-        //将克隆好的副本放在原先的之后，按照顺序逐个删除，最后初始化克隆的副本
-    };
-    function h5Submit(target) {
-        var options = state.options;
-        var fileObj = target[0].files[0];
-        var fd = new FormData();//h5对象
-        //附加参数
-        for (key in options.params) {
-            fd.append(key, options.params[key])
-        }
-        var fileName = target.attr('name');
-        if (fileName == ''
-            || fileName == undefined) {
-            fileName = 'file';
-        }
-        fd.append(fileName, fileObj);
-        //异步上传
-        var xhr = new XMLHttpRequest();
-        xhr.upload.addEventListener("progress", function (evt) {
-            if (evt.lengthComputable) {
-                var percentComplete = Math.round(evt.loaded * 100 / evt.total);
-                log(percentComplete + "%");
-                if (options.onProgress) {
-                    options.onProgress(evt);
-                }
-            }
-        }, false);
-        xhr.addEventListener("load", function (evt) {
-            if ('json' == options.dataType) {
-                var d = window.eval('(' + evt.target.responseText + ')');
-                options.onComplate(d);
-            } else {
-                options.onComplate(evt.target.responseText);
-            }
-        }, false);
-        xhr.addEventListener("error", function () {
-            log("error");
-        }, false);
-        xhr.open("POST", options.url);
-        xhr.send(fd);
-    }
-    function ajaxSubmit(target) {
-        var options = state.options;
-        if (options.url == '' || options.url == null) {
-            alert("无上传地址");
-            return;
-        }
-        if ($(target).val() == '' || $(target).val() == null) {
-            alert("请选择文件");
-            return;
-        }
-        var canSend = options.onSend($(target), $(target).val());
-        if (!canSend) {
-            return;
-        }
-        /*判断是否可以用h5*/
-        if (window.FormData) {
-            //h5
-            h5Submit(target);
+}
+
+function clacImgZoomParam(maxWidth, maxHeight, width, height) {
+    var param = { top: 0, left: 0, width: width, height: height };
+    if (width > maxWidth || height > maxHeight) {
+        rateWidth = width / maxWidth;
+        rateHeight = height / maxHeight;
+
+        if (rateWidth > rateHeight) {
+            param.width = maxWidth;
+            param.height = Math.round(height / rateWidth);
         } else {
-            /**/
-            if (iframeObj == null) {
-                var frameName = 'upload_frame_' + (frameCount++);
-                var iframe = $('<iframe style="position:absolute;top:-9999px" ><script type="text/javascript"></script></iframe>').attr('name', frameName);
-                formName = 'form_' + frameName;
-                var form = $('<form method="post" style="display:none;" enctype="multipart/form-data" />').attr('name', formName);
-                form.attr("target", frameName).attr('action', options.url);
-                var fileHtml = $(target).prop("outerHTML");
-                colfile = $(target).clone(true);
-                $(target).replaceWith(colfile);
-                var formHtml = "";
-                // form中增加数据域
-                for (key in options.params) {
-                    formHtml += '<input type="hidden" name="' + key + '" value="' + options.params[key] + '">';
-                }
-                form.append(formHtml);
-                form.append(target);
-                iframe.appendTo("body");
-                form.appendTo("body");
-                iframeObj = iframe;
-            }
-            //禁用
-            $(colfile).attr("disabled", "disabled");
-            var form = $("form[name=" + formName + "]");
-            //加载事件
-            iframeObj.bind("load", function (e) {
-                var contents = $(this).contents().get(0);
-                var data = $(contents).find('body').text();
-                if ('json' == options.dataType) {
-                    try {
-                        data = window.eval('(' + data + ')');
-                    }
-                    catch (Eobject) {
-                        log(Eobject);
-                        data = null;
-                    }
-                }
-                options.onComplate(data);
-                iframeObj.remove();
-                form.remove();
-                iframeObj = null;
-                //启用
-                $(colfile).removeAttr("disabled");
-            });
-            try {
-                form.submit();
-            } catch (Eobject) {
-                log(Eobject);
-            }
+            param.width = Math.round(width / rateHeight);
+            param.height = maxHeight;
         }
-    };
-    //构造
-    $.fn.upload = function (options) {
-        if (typeof options == "string") {
-            return $.fn.upload.methods[options](this);
-        }
-        options = options || {};
-        state = $.data(this, "upload");
-        if (state)
-            $.extend(state.options, options);
-        else {
-            state = $.data(this, "upload", {
-                options: $.extend({}, $.fn.upload.defaults, options)
-            });
-        }
-    };
-    //方法
-    $.fn.upload.methods = {
-        clean: function (jq) {//清空
-            return jq.each(function () {
-                clean(jq);
-            });
-        },
-        ajaxSubmit: function (jq) {//提交
-            return jq.each(function () {
-                ajaxSubmit(jq);
-            });
-        },
-        getFileVal: function (jq) {//获取值
-            return jq.val()
-        }
-    };
-    //默认项
-    $.fn.upload.defaults = $.extend({}, {
-        url: '',
-        dataType: 'json',
-        params: {},
-        onSend: function (obj, str) { return true; },
-        onComplate: function (e) {},
-        onProgress: function (e) {}
-    });
-})(jQuery);
+    }
+    param.left = Math.round((maxWidth - param.width) / 2);
+    param.top = Math.round((maxHeight - param.height) / 2);
+    return param;
+}

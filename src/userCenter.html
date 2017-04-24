@@ -100,13 +100,11 @@
     		</div>
     		<p class="title">您来自那里？</p>
     		<div class="clear">
-    			<select class="fl" name="" >
-    				<option value="男">男</option>
-    				<option value="女">女</option>
+    			<select class="fl" name="P1" >
+    				
     			</select>
-    			<select class="fl" name="" >
-    				<option value="男">男</option>
-    				<option value="女">女</option>
+    			<select class="fl" name="C1" >
+    				
     			</select>
     		</div>
     		<p class="title">您想代理推广什么类型的游戏？</p>
@@ -125,8 +123,12 @@
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/public.js"></script>
+    <script src="js/PCASClass.js"></script>
     <script>
         $(function(){
+            /*省市select*/
+            new PCAS("P1","C1");
+            
             $(".sidebar li").click(function(){
                 var Index=$(this).index();
                 $(this).addClass("active").siblings().removeClass("active");
