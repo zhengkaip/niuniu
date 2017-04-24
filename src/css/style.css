@@ -2,6 +2,7 @@
 html,body{height:100%;}
 body{position: relative;}
 
+.mr1{margin-right:10px;}
 .mb20{margin-bottom:20px;}
 .mr20{margin-right:20px;}
 .ml20{margin-left:20px;}
@@ -11,6 +12,7 @@ body{position: relative;}
 .ml220{margin-left:220px;}
 .mb30{margin-bottom:30px;}
 .mb40{margin-bottom:40px;}
+.ml70{margin-left:70px;}
 
 .p30{padding:30px;}
 .pt20{padding-top:20px;}
@@ -126,12 +128,12 @@ body{position: relative;}
 .alter_phone .code{width:198px;margin-right:34px;}
 .alter_phone button{width:118px;height:40px;color:#fff;font-size:14px;background:#fb8a24;cursor:pointer;border:1px solid #fb8a24;}
 .alter_phone button.active{color:#ccc;border:1px solid #ddd;background:#f5f5f5;}
-.alter_phone .hint{font-size:14px;color:#ccc;}
+.alter_phone .hint{display:none;font-size:14px;color:#ccc;}
 .pop_content input[type="submit"]{display:block;width:120px;height:40px;color:#fff;font-size:14px;border:none;background:#fb8a24;margin:0 auto;cursor: pointer;border:none;}
-.alter_else .title{color:#333;font-size:14px;margin-bottom:15px;}
+.alter_else .title,.alter_else label{color:#333;font-size:14px;margin-bottom:15px;}
 .alter_else select{width:155px;height:26px;}
 .alter_else input{width:145px;height:24px;}
-.alter_else input,.alter_else select{padding-left:10px;margin-left:70px;margin-bottom:20px;color:#cccccc;border:1px solid #dedede;}
+.alter_else input,.alter_else select{padding-left:10px;margin-bottom:20px;color:#cccccc;border:1px solid #dedede;}
 
 .login_section{height:475px;min-width:1200px;background:url("../images/login_bg.png") no-repeat center;}
 .game_login{background:url("../images/login_bg1.png") no-repeat center;}
@@ -165,7 +167,7 @@ body{position: relative;}
 
 .forget_password{padding:110px 0;background:#fff;}
 .forget_password .alter_phone{margin:0 auto;}
-.forget_password input[type="submit"]{display:block;width:400px;height:40px;color:#fff;font-size:14px;border:none;background:#fb8a24;margin:0 auto;cursor: pointer;border:none;}
+.forget_password input[type="submit"]{display:block;width:365px;height:40px;color:#fff;font-size:14px;border:none;background:#fb8a24;margin-left:56px;cursor: pointer;border:none;}
 
 .q_a_content{width:1040px;padding-bottom:27px;border:1px solid #ddd;background:#fff;}
 .q_a_item{ padding:20px 15px;border-bottom:1px dashed #ddd;}

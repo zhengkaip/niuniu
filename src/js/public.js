@@ -19,8 +19,7 @@ $(function(){
 		}else{
 			$(".footer").css({
 				"position":"static",
-				"left":0,
-				"margin-left":0
+				"left":0
 			})
 		}
 	}
