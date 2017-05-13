@@ -33,9 +33,10 @@ body{position: relative;}
 .header{position:relative;height:60px;z-index:10;background:#fff;border-bottom: 1px solid #ededed;box-shadow:0 0 10px rgba(0,0,0,0.3);}
 .header .title{line-height:60px;color:#333;font-size:16px;font-weight:bold;}
 .header .select{position: relative;}
-.header .options{position: absolute;top:60px;left:0;z-index:10;background: #fff;border: 1px solid #ddd;border-bottom: none;}
-.header .options li{width: 135px;font-size: 14px;color: #666;line-height: 40px;text-align: center;border-bottom: 1px solid #ddd}
-.header .select p{height:100%;line-height: 60px;padding-right:23px;margin-right:18px;color:#f53964;font-size:14px;background:url("../images/down.png") no-repeat right center;cursor: pointer;}
+.header .options{position: absolute;top:60px;left:0;z-index:10;display:none;background: #fff;border: 1px solid #ddd;border-bottom: none;}
+.header .options li{width: 143px;font-size: 14px;color: #666;line-height: 40px;text-align: center;border-bottom: 1px solid #ddd}
+.header .select p{height:100%;line-height: 60px;padding-right:23px;padding-left:10px;margin-right:18px;color:#f53964;font-size:14px;background:url("../images/down.png") no-repeat 125px center;cursor: pointer;}
+.header .select p.active{color:#fff;background:url("../images/down1.png") no-repeat 125px center;background-color:#ffa200;}
 .header .nav li{height:40px;padding-top:20px;}
 .header .nav a{height:15px;line-height:15px;padding:0 25px;color:#333;font-size:14px;}
 .header .nav a.border_right{border-right:1px solid #333;}
@@ -55,6 +56,8 @@ body{position: relative;}
 .wrap{overflow: hidden;}
 .search input[type="text"]{width:390px;height:34px;padding-left:15px;color:#666;font-size:14px;border:1px solid #ffa200;}
 .search input[type="button"]{width:90px;height:36px;background:#ffa200;color:#fff;font-size:16px;border:none;cursor:pointer;}
+
+.content_title h4{color:#666;font-size:16px;padding-left:20px;padding-top:30px;}
 
 .game_items{width:862px;margin-right:10px;background:#fff;}
 .game_items .title{position:relative;padding:20px 20px 0;color:#333333;font-size:16px;}
@@ -104,6 +107,7 @@ body{position: relative;}
 .side_content{width:1007px;padding:30px 0 118px 35px;border:1px solid #ddd;background:#fff;}
 .side_content>p{padding-bottom:20px;}
 .side_content p{line-height:24px;color:#666;font-size:14px;}
+.side_content .red{color:#fc2b2c;}
 .side_content p a{color:blue;}
 .side_content img{cursor:pointer;}
 .issue_link span{line-height:40px;margin-right:36px;color:#6bc1f9;font-size:14px;}
@@ -214,7 +218,8 @@ body{position: relative;}
 .issue_title{font-size:14px;color:#333;font-weight:bold;margin-left:-10px;}
 .issue_form{}
 .issue_form label{line-height:36px;font-size:14px;color:#666;}
-.issue_form input[type="text"],.issue_form select{width:400px;height:34px;padding-left:10px;border:1px solid #f1f1f1;}
+.issue_form input[type="text"],.issue_form select{width:400px;height:34px;border:1px solid #f1f1f1;}
+.issue_form input[type="text"]{width:390px;padding-left:10px;}
 .issue_form input[type="radio"]{margin-top:12px;}
 .issue_form span{line-height:36px;font-size:14px;color:#666;margin:0 10px;}
 .issue_form textarea{width:380px;height:160px;padding:10px;border:1px solid #ddd;font-size:14px;color:#666;}
