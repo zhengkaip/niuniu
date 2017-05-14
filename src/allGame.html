@@ -315,12 +315,15 @@
     <script src="js/page.js"></script>
     <script>
             $(function(){
+                /*分页初始化完成调用*/
                 var GG = {
                     "kk":function(mm){
                        // alert(mm);
                     }
                 }
-                $("#page").initPage(71,1,GG.kk);
+                /*初始化分页 第一个参数是总条数，第二个参数是默认当前是第几页*/
+                $("#page").initPage(71,2,GG.kk);
+
                 $(".header .select p").click(function(event) {
                     $(".header .options").toggle();
                 });
