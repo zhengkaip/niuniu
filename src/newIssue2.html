@@ -23,10 +23,10 @@
                     <li class="fl"><a href="" title="">个人中心</a></li>
                 </ul>
                 <div class="fl select">
-                    <p class="active">招募游戏代理推广</p>
+                    <p>招募游戏代理推广</p>
                     <ul class="options">
-                        <li>发布新招聘</li>
-                        <li>已发布的招聘</li>
+                        <li><a href="">发布新招聘</a></li>
+                        <li><a href="">已发布的招聘</a></li>
                     </ul>
                 </div>
                 <ul class="nav fl">
@@ -69,6 +69,16 @@
         <p>武汉勇士科技有限公司版权所有 2016-2017鄂ICP备15016317号-7</p>
     </div>
     <script src="js/jquery.min.js"></script>
+    <script>
+        $(".header .select p").click(function(event) {
+            $(".header .options").toggle();
+            if($(this).hasClass('active')){
+                $(this).removeClass('active')
+            }else{
+                $(this).addClass('active')
+            }
+        });
+    </script>
 </body>
 
 </html>

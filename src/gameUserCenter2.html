@@ -20,13 +20,13 @@
             <img class="fl" src="images/slogan.png" height="60" width="280">
             <div class="fr">
                 <ul class="fl nav">
-                    <li class="fl active"><a href="" title="">首页</a></li>
-                    <li class="fl"><a href="" title="">个人中心</a></li>
+                    <li class="fl"><a href="" title="">首页</a></li>
+                    <li class="fl active"><a href="" title="">个人中心</a></li>
                 </ul>
                 <div class="fl select">
                     <p>招募游戏代理推广</p>
                     <ul class="options">
-                        <li>1</li>
+                        <li><a href="">1</a></li>
                     </ul>
                 </div>
                 <ul class="fl nav">
@@ -220,6 +220,11 @@
         });
         $(".header .select p").click(function(event) {
             $(".header .options").toggle();
+            if($(this).hasClass('active')){
+                $(this).removeClass('active')
+            }else{
+                $(this).addClass('active')
+            }
         });
 
         /*验证码发送*/

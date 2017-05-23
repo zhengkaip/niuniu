@@ -23,10 +23,10 @@
                     <li class="fl"><a href="" title="">个人中心</a></li>
                 </ul>
                 <div class="fl select">
-                    <p class="active">招募游戏代理推广</p>
+                    <p>招募游戏代理推广</p>
                     <ul class="options">
-                        <li>发布新招聘</li>
-                        <li>已发布的招募</li>
+                        <li><a href="">发布新招聘</a></li>
+                        <li><a href="">已发布的招募</a></li>
                     </ul>
                 </div>
                 <ul class="nav fl">
@@ -118,6 +118,15 @@
         }
         /*初始化分页 第一个参数是总条数，第二个参数是默认当前是第几页*/
     $("#page").initPage(71, 2, GG.kk);
+
+    $(".header .select p").click(function(event) {
+            $(".header .options").toggle();
+            if($(this).hasClass('active')){
+                $(this).removeClass('active')
+            }else{
+                $(this).addClass('active')
+            }
+        });
     </script>
 </body>
 
