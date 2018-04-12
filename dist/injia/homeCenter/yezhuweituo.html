@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><meta name=format-detection content="telephone=no"><title>业主委托</title><link rel=stylesheet href=../common/css/weui.min.css><link rel=stylesheet href=../css/common.css><link rel=stylesheet href=css/yezhuweituo.css></head><body><div class=weituo-all><a href=indexlist.html><div class=return-img><img src=images/returns.png></div></a><div class=header><div class=weui-cell><div class=weui-cell__hd><label class=weui-label>姓名</label></div><div class=weui-cell__bd><input class=weui-input id=yezhu-name type=text placeholder=如何称呼您></div></div><div class=weui-cell><div class=weui-cell__hd><label class=weui-label>手机号</label></div><div class=weui-cell__bd><input class=weui-input id=yezhu-phone type=number pattern=[0-9]* oninput="if(value.length>11)value=value.slice(0,11)" placeholder=您的联系方式></div></div></div><div class=header><div class=weui-cell><div class=weui-cell__hd><label class=weui-label>社区名称</label></div><div class=weui-cell__bd><input class=weui-input id=yezhu-xiaoqu type=text placeholder=请填写></div></div><div class=weui-cell><div class=weui-cell__hd><label class=weui-label>房屋居室</label></div><div class=weui-cell__bd><input class=weui-input id=yezhu-jushi type=number oninput="if(value.length>2)value=value.slice(0,2)" placeholder=请填写></div></div><div class=weui-cell><div class=weui-cell__hd><label class=weui-label>房屋面积</label></div><div class=weui-cell__bd><input class=weui-input id=yezhu-mianji type=number onkeyup=clearNoNum(this) placeholder=请填写></div><div class=weui-cell__ft><span>㎡</span></div></div><div class=weui-cell><div class=weui-cell__hd><label class=weui-label>可租年限</label></div><div class=weui-cell__bd><input class=weui-input id=yezhu-nianxian type=number pattern=[0-9]* oninput="if(value.length>2)value=value.slice(0,2)" placeholder=请填写></div><div class=weui-cell__ft><span>年</span></div></div></div><div class=footer><div class=ding-bot><p>委托提交后，我们会在24小时之内联系您，</p><p>请保持电话畅通。</p><button class=weui-btn id=sureTijiao>提交</button></div></div></div><div id=toast style="display: none;"><div class=weui-mask_transparent></div><div class=weui-toast><i class="weui-icon-success-no-circle weui-icon_toast"></i><p class="weui-toast__content tishiContent">已提交</p></div></div><div id=qidai style="display: none;"><div class=qidaiContent><p class=qidaiDesc></p></div></div><script src=../public/jquery-1.8.0.min.js></script><script src=https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js></script><script type=text/javascript class="searchbar js_show">
+    $(function(){
+        var $searchBar = $('#searchBar'),
+            $searchResult = $('#searchResult'),
+            $searchText = $('#searchText'),
+            $searchInput = $('#searchInput'),
+            $searchClear = $('#searchClear'),
+            $searchCancel = $('#searchCancel');
+
+        function hideSearchResult(){
+            $searchResult.hide();
+            $searchInput.val('');
+        }
+        function cancelSearch(){
+            hideSearchResult();
+            $searchBar.removeClass('weui-search-bar_focusing');
+            $searchText.show();
+        }
+
+        $searchText.on('click', function(){
+            $searchBar.addClass('weui-search-bar_focusing');
+            $searchInput.focus();
+            $(".search_con").hide();
+            $(".search_title_hover").removeClass("search_title_hover");
+        });
+        $searchInput
+            .on('blur', function () {
+                if(!this.value.length) cancelSearch();
+            })
+            .on('input', function(){
+                if(this.value.length) {
+                    $searchResult.show();
+                } else {
+                    $searchResult.hide();
+                }
+            })
+        ;
+        $searchClear.on('click', function(){
+            hideSearchResult();
+            $searchInput.focus();
+        });
+        $searchCancel.on('click', function(){
+            cancelSearch();
+            $searchInput.blur();
+        });
+    });
+</script><script src=../common/js/public.js></script><script src="js/yezhuweituo.js?v=20170916"></script></body></html>

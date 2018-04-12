@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>游戏个人中心</title><meta name=description><meta name=keywords><link href=css/init.css rel=stylesheet><link rel=stylesheet type=text/css href=css/style.css><script src=js/update.js></script></head><body><div class=header><div class="box clear"><img class=fl src=images/logo.png height=60 width=150> <img class=fl src=images/slogan.png height=60 width=280><div class=fr><ul class="fl nav"><li class=fl><a>首页</a></li><li class="fl active"><a href=gameUserCenter.html>个人中心</a></li></ul><div class="fl select"><p>招募游戏代理推广</p><ul class=options><li>1</li></ul></div><ul class="fl nav"><li class=fl><a>退出</a></li><li class=fl><a>新手帮助</a></li></ul></div></div></div><div class="box clear clear"><ul class="sidebar mr10 fl"><li class=active>个人资料</li><li>修改密码</li><li>身份认证</li></ul><div class="fl side_content"><p>您的身份：游戏公司<img class="lock ml20" src=images/lock.png height=16 width=16></p><p>您的手机号：18895688667 <img class="ml20 phone alter" src=images/alter.png height=16 width=17></p><p>姓名：李丽丽 <img class="ml20 alter" src=images/alter.png height=16 width=17></p><p>性别：女 <img class="ml20 alter" src=images/alter.png height=16 width=17></p><div class="clear mb30"><p class=fl>游戏运营组织形式：</p><div class=fl><p>想代理河南洛阳杠呲麻将（发布于2017-03-22 10：05 <img class="ml20 alter" src=images/alter.png height=16 width=17></p><p>想代理斗牛游戏（发布于2017-03-21 15：27）<img class="ml20 alter" src=images/alter.png height=16 width=17></p></div></div></div><div class="fl side_content hide"><div class="clear mb30"><label class=fl>当前密码</label> <input class=fl type=text placeholder=请输入您的手机号></div><div class="clear mb30"><label class=fl>新密码</label> <input class=fl type=text placeholder=请输入密码></div><div class="clear mb30"><label class=fl>确认密码</label> <input class=fl type=text placeholder=请再次输入密码，进行确认></div><div class="clear mb30"><label class=fl></label> <input class=fl type=submit value=更新密码></div></div><div class="fl side_content hide"><p>您的身份：游戏公司</p><p>您的运营形式：公司</p><div class="clear mb30"><p class=fl>公司营业执照认证状态：未通过认证</p><p class="fl ml150">授权书认证状态：未通过 (<a>下载授权书模板</a>)</p></div><div class="updata clear"><div class="updata_item mb30 pl20 fl"><div class="previewImage mb30" id=previewImage1><img src=images/update1.png height=149 width=149></div><div class=file_wrap>上传图片 <input type=file onchange="previewImage(this, 'previewImage1')"></div></div><div class="updata_item ml220 pl20 fl"><div class="previewImage mb30" id=previewImage2><img src=images/update2.png height=149 width=149></div><div class=file_wrap>上传图片 <input type=file onchange="previewImage(this, 'previewImage2')"></div></div></div><button class=ml220>提交平台审核</button></div></div><div class="box footer"><div class=footer_nav><a>关于我们</a> <span>|</span> <a>联系我们</a></div><p>武汉勇士科技有限公司版权所有 2016-2017鄂ICP备15016317号-7</p></div><div class="pop hide pop1"><div class=pop_bg></div><div class="pop_content alter_phone"><form method=get accept-charset=utf-8><div class="clear mb30"><label class=fl>手机号</label> <input class="fl phone phone_number" type=text></div><div class="clear mb30"><label class=fl>验证码</label> <input class="fl code" type=text> <button type=button class=fl>获取验证码</button></div><p class="mb30 hint">短信验证码已发送至手机:12424235335,请在5分钟内完成输入验证</p><input type=submit value=完成></form></div><div class="pop_content pop_content1 alter_else"><p class=title>怎么称呼您？</p><div class="clear ml70"><input class="fl mr50" type=text placeholder=请选择您的姓名><select class=fl><option value=男>男</option><option value=女>女</option></select></div><p class=title>您是以公司形式运营游戏还是以非公司形式运营游戏？</p><div class="clear ml70"><select class="fl mr50"><option value=男>公司</option><option value=女>非公司</option></select><input class=fl type=text placeholder=如是公司形式请在这里输入公司名称></div><p class=title>您的游戏类型？</p><div class="clear ml70"><select class="fl mr50"><option value=男>请选择</option><option value=女>1</option></select><select class=fl><option value=男>请选择</option><option value=女>2</option></select></div><p class=title>您的游戏地域范围？</p><div class="clear ml70"><select class="fl mr50"><option value=男>请选择</option><option value=女>1</option></select><select class=fl><option value=男>请选择</option><option value=女>2</option></select><select class=fl><option value=男>请选择</option><option value=女>3</option></select></div><p class=title>您的上线时间？</p><div class="clear ml70"><input id=J-xl class=fl type=text></div><p class=title>请输入您运营的一款游戏名称及下载地址？</p><div class=clear><div class="fl mr10"><label class="fl mr10">游戏名称</label> <input class=fl type=text></div><div class=fl><label class="fl mr10">IOS下载地址</label> <input class="fl ml10" type=text></div></div><div class=clear><label class="fl mr10">安卓下载地址</label> <input class=fl type=text></div><input type=submit value=完成></div></div><script src=js/jquery.min.js></script><script src=js/public.js></script><script type=text/javascript src=js/laydate.dev.js></script><script>
+    $(function() {
+        /*日期*/
+        laydate({
+            elem: '#J-xl'
+        });
+        $(".sidebar li").click(function() {
+            var Index = $(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".side_content").eq(Index).removeClass("hide").siblings(".side_content").addClass("hide")
+        });
+        $(".alter").click(function() {
+            $(".pop").removeClass('hide');
+            if ($(this).hasClass('phone')) {
+                $(".pop_content").eq(0).show().siblings(".pop_content").hide();
+            } else {
+                $(".pop_content").eq(1).show().siblings(".pop_content").hide();
+            }
+        });
+        $(".pop_bg").click(function() {
+            $(".pop").addClass('hide');
+        });
+        $(".header .select p").click(function(event) {
+            $(".header .options").toggle();
+        });
+
+        /*验证码发送*/
+        var countDown=null;
+            $(".alter_phone button").click(function(){
+                var phone=$(".phone_number").val();
+                if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(phone))){
+                    alert("请输入正确手机号");
+                    return false;
+                }
+                $(".hint").show().text("短信验证码已发送至手机:"+phone+",请在5分钟内完成输入验证")
+                var allTime=100;
+                $(this).attr("disabled",true).addClass("active");
+                var This=this;
+                countDown=setInterval(function(){
+                    allTime--;
+                    $(This).text("重新获取("+allTime+")");
+                    if(allTime==0){
+                        clearInterval(countDown);
+                        $(This).attr("disabled",false).removeClass("active");
+                        $(This).text("获取验证码");
+                        $(".hint").hide()
+                    }
+                },1000)
+            })
+    })
+    </script></body></html>

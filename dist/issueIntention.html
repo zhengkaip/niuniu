@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>发布代理推广意向</title><meta name=description><meta name=keywords><link href=css/init.css rel=stylesheet><link rel=stylesheet type=text/css href=css/style.css></head><body><div class=header><div class="box clear"><img class=fl src=images/logo.png height=60 width=150> <img class=fl src=images/slogan.png height=60 width=280><div class=fr><ul class="fl nav"><li class=fl><a href=generalizeIndex.html>首页</a></li><li class=fl><a href=gameUserCenter.html>个人中心</a></li><li class="fl active"><a href=issueIntention.html>发布代理推广意向</a></li><li class=fl><a>退出</a></li><li class=fl><a>新手帮助</a></li></ul></div></div></div><div class="box bg_white"><div class=content_title><h4>首页>发布代理推广意向</h4></div><div class="intention_main pt30 pl60 pb50"><p>您的身份：代理员推广<img class="lock ml20" src=images/lock.png height=16 width=16></p><p>您的手机号：<i>18895688667</i><input class="hide modifi_input" type=text><img class="ml20 phone alter modifi" src=images/alter.png height=16 width=17></p><p>姓名：<i>李丽丽</i><input class="hide modifi_input" type=text> <img class="ml20 alter modifi" src=images/alter.png height=16 width=17></p><p>性别：<i>女</i><input class="hide modifi_input" type=text> <img class="ml20 alter modifi" src=images/alter.png height=16 width=17></p><p>来自：<i>湖北武汉</i><input class="hide modifi_input" type=text> <img class="ml20 alter modifi" src=images/alter.png height=16 width=17></p><p>您想代理什么类型的棋牌游戏？</p><div class="clear intention_select mb20"><select class="fl mr50"><option>请选择</option><option></option></select><select class=fl><option>请选择</option><option></option></select></div><p>补充说明</p><textarea class="exp_text p20 mb20" cols=30 rows=10 placeholder=请输入不超过150字></textarea> <input type=submit value=发布></div></div><div class="box footer"><div class=footer_nav><a>关于我们</a> <span>|</span> <a>联系我们</a></div><p>武汉勇士科技有限公司版权所有 2016-2017鄂ICP备15016317号-7</p></div><script src=js/jquery.min.js></script><script>
+        $(function(){
+            $(".modifi").click(function(event) {
+                $(this).siblings('i').hide();
+                $(this).siblings('input').show();
+                $(this).siblings('input').val($(this).siblings('i').text());
+            });
+            $(".modifi_input").blur(function(event) {
+                $(this).hide().siblings('i').show().text($(this).val());
+            });
+        })
+    </script></body></html>

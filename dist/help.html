@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>新手</title><meta name=description><meta name=keywords><link href=css/init.css rel=stylesheet><link rel=stylesheet type=text/css href=css/style.css></head><body><div class=header><div class="box clear"><img class=fl src=images/logo.png height=60 width=150> <img class=fl src=images/slogan.png height=60 width=280><div class=fr><div class="fl select"><p>发布新的需求</p><ul class=options><li>1</li></ul></div><ul class="fl nav"><li class=fl><a class=border_right>代理登录/注册</a></li><li class=fl><a class=border_right>游戏公司登录/注册</a></li><li class="fl active1"><a class=active1>新手帮助</a></li></ul></div></div></div><div class="box clear clear"><ul class="sidebar mr10 fl"><li class=active>注册/登录</li><li>充值</li><li>账户密码</li><li>发票</li><li>下载</li><li>上传</li><li>联系我们</li></ul><div class="fl q_a_content"><div class=q_a_item><p class=q>我的密码确认输入无误，为什么无法登录？</p><p class=a>使用手机进行登录，请确认您填写的是注册时使用的手机号。如果仍然无法登录，请联系我们！</p></div><div class=q_a_item><p class=q>我的密码确认输入无误，为什么无法登录？</p><p class=a>使用手机进行登录，请确认您填写的是注册时使用的手机号。如果仍然无法登录，请联系我们！</p></div><div class=q_a_item><p class=q>我的密码确认输入无误，为什么无法登录？</p><p class=a>使用手机进行登录，请确认您填写的是注册时使用的手机号。如果仍然无法登录，请联系我们！</p></div><div class=q_a_item><p class=q>我的密码确认输入无误，为什么无法登录？</p><p class=a>使用手机进行登录，请确认您填写的是注册时使用的手机号。如果仍然无法登录，请联系我们！</p></div><div class=q_a_item><p class=q>我的密码确认输入无误，为什么无法登录？</p><p class=a>使用手机进行登录，请确认您填写的是注册时使用的手机号。如果仍然无法登录，请联系我们！</p></div></div><div class="fl q_a_content hide"><div class=q_a_item><p class=q>我的密码确认输入无误，为什么无法登录？</p><p class=a>使用手机进行登录，请确认您填写的是注册时使用的手机号。如果仍然无法登录，请联系我们！</p></div></div></div><div class="box footer"><div class=footer_nav><a>关于我们</a> <span>|</span> <a>联系我们</a></div><p>武汉勇士科技有限公司版权所有 2016-2017鄂ICP备15016317号-7</p></div><script src=js/jquery.min.js></script><script src=js/public.js></script><script>
+    $(function(){
+    	/*导航select选项*/
+        $(".header .select p").click(function(event) {
+            $(".header .options").toggle();
+        });
+        /*侧边栏切换*/
+        $(".sidebar li").click(function(){
+            var Index=$(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".q_a_content").eq(Index).removeClass("hide").siblings(".q_a_content").addClass("hide")
+        })
+    })
+</script></body></html>

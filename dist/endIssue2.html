@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>已发布的招募</title><meta name=description><meta name=keywords><link href=css/init.css rel=stylesheet><link rel=stylesheet type=text/css href=css/style.css><link rel=stylesheet href=css/page.css></head><body><div class=header><div class="box clear"><img class=fl src=images/logo.png height=60 width=150> <img class=fl src=images/slogan.png height=60 width=280><div class=fr><ul class="fl nav"><li class=fl><a>首页</a></li><li class=fl><a>个人中心</a></li></ul><div class="fl select"><p>招募游戏代理推广</p><ul class=options><li><a>发布新招聘</a></li><li><a>已发布的招募</a></li></ul></div><ul class="nav fl"><li class=fl><a>退出</a></li><li class=fl><a>新手帮助</a></li></ul></div></div></div><div class="box wrap clear bg_white mb130"><div class="content_title mb40"><h4>招募游戏代理推广 > 已发布的招聘</h4></div><div class="end_issue_tabel pl30 mb30"><table><tr><th>游戏名称：楚天武汉红中赖子杠</th><th>游戏类型：麻将类型</th><th>面向市场：湖北武汉及周边地区</th><th><a class=lookInfo href=javascript:;>查看详情</a></th><th><a class="modifi mr40" href=javascript:;>修改</a></th></tr><tr><td>发布编号：105238</td><td><img src=images/look.png> 被查看365次</td><td><img src=images/phone.png> 联系电话被获取过254次</td><td><img src=images/time.png> 发布于2017-3-14</td><td><a class="delete mr40" href=javascript:;>删除</a></td></tr></table></div><div class="end_issue_tabel pl30 mb30"><table><tr><th>游戏名称：楚天武汉红中赖子杠</th><th>游戏类型：麻将类型</th><th>面向市场：湖北武汉及周边地区</th><th><a class=lookInfo href=javascript:;>查看详情</a></th><th><a class="modifi mr40" href=javascript:;>修改</a></th></tr><tr><td>发布编号：105238</td><td><img src=images/look.png> 被查看365次</td><td><img src=images/phone.png> 联系电话被获取过254次</td><td><img src=images/time.png> 发布于2017-3-14</td><td><a class="delete mr40" href=javascript:;>删除</a></td></tr></table><div class="page_wrap clear"><div class=page_section><ul class="page clear" maxshowpageitem=5 pagelistcount=10 id=page></ul></div></div></div></div><div class="footer footer_bg"><img src=images/footer_logo.png height=113 width=114><div class=footer_nav><a>关于我们</a> <span>|</span> <a>联系我们</a></div><p>武汉勇士科技有限公司版权所有 2016-2017鄂ICP备15016317号-7</p></div><script src=js/jquery.min.js></script><script src=js/page.js></script><script>
+    /*分页初始化完成调用函数*/
+    var GG = {
+            "kk": function(mm) {
+                // alert(mm);
+            }
+        }
+        /*初始化分页 第一个参数是总条数，第二个参数是默认当前是第几页*/
+    $("#page").initPage(71, 2, GG.kk);
+
+    $(".header .select p").click(function(event) {
+            $(".header .options").toggle();
+            if($(this).hasClass('active')){
+                $(this).removeClass('active')
+            }else{
+                $(this).addClass('active')
+            }
+        });
+    </script></body></html>

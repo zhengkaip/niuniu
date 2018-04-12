@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><meta name=format-detection content="telephone=no"><title>我的账单</title><link rel=stylesheet type=text/css href="../css/common.css?v=20170811"><link rel=stylesheet href=../perCenter/css/weui.min.css><link rel=stylesheet href=css/myhomeCommon.css><link rel=stylesheet href=css/hetongShouzhi.css></head><body><div id=hetongShouzhi><a onclick=history.back()><div class=return-img><img src=../homeCenter/images/returns.png></div></a><div class=weui-panel__bd><a href=javascript:void(0); class="weui-media-box weui-media-box_appmsg bgff"><div class=weui-media-box__bd><h4 class="weui-media-box__title houseAdress">安宁庄前街清上园9号楼3单元202</h4><p class="weui-media-box__desc mt10 hetongTime">2016/03/26 -- 2017/03/25</p><p class="weui-media-box__desc mt10"><span class=monthMoney>1500.0元/月</span><span class=payType>月付</span><span class=hetongStatus>租期中</span></p></div></a></div><div class="navbar bgff"><div class="navbar__item bar__item_on"><span class="yellow active">未支付</span></div><div class=navbar__item><span class=yellow>已支付</span></div></div><div class="tab__panel mt10"><div class=content-show><div class=wzPay></div></div><div class="content-show none"><div class=yzPay></div></div></div><div><div class=weui-mask id=iosMask style="opacity: 0; display: none;"></div><div class=weui-actionsheet id=iosActionsheet><div class=weui-actionsheet__title><p class="weui-actionsheet__title-text bgff" style="padding: 15px 0 ;text-align: center;border-bottom: 1px solid #f1f1f1">选择付款方式</p></div><div id=payList class=weui-actionsheet__menu></div><div class=weui-actionsheet__action><div class=weui-actionsheet__cell style="text-align: center" id=iosActionsheetCancel>取消</div></div></div></div></div><div id=loadingToast style="opacity: 0; display: none;"><div class=weui-mask_transparent></div><div class=weui-toast><i class="weui-loading weui-icon_toast"></i><p class=weui-toast__content>数据加载中</p></div></div><script src=js/rem.js></script><script src=../public/jquery-1.8.0.min.js></script><script src=../common/js/public.js></script><script type=text/javascript src="js/loginhelper.js?v=20170915"></script><script src="js/hetongShouzhi.js?v=20180312_02"></script><script src="js/api/hetongShouzhiApi.js?v=20180309_02"></script><script src=https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js></script><script type=text/javascript class="actionsheet js_show">
+        // ios
+        $(function () {
+            var $iosActionsheet = $('#iosActionsheet');
+            var $iosMask = $('#iosMask');
+            function hideActionSheet() {
+                $iosActionsheet.removeClass('weui-actionsheet_toggle');
+                $iosMask.css("opacity", 0);
+                $iosMask.fadeOut(200);
+            }
+            $iosMask.on('click', hideActionSheet);
+            $('#iosActionsheetCancel').on('click', hideActionSheet);
+            //        $("#showIOSActionSheet").on("click", function(){
+            //            $iosActionsheet.addClass('weui-actionsheet_toggle');
+            //            $iosMask.css("opacity",1);
+            //            $iosMask.fadeIn(200);
+            //        });
+        });
+    </script></body></html>

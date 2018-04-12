@@ -1,0 +1,1 @@
+.page{list-style:none}.page>li{float:left;padding:5px 10px;cursor:pointer}.page .pageItem{border:thin solid #DDD;margin:5px}.page .pageItem:hover,.page .pageItemActive{border:thin solid #09F;background-color:#09F;color:#fff}.page .pageItemActive{margin:5px}.page .pageItemDisable{border:thin solid #DDD;margin:5px;background-color:#DDD}

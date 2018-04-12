@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><meta name=format-detection content="telephone=no"><title>我的门锁</title><link rel=stylesheet href=../perCenter/css/weui.min.css><link rel=stylesheet href=../css/common.css><link rel=stylesheet href=css/myhomeCommon.css><link rel=stylesheet href=css/aliIcon/iconfont.css><link rel=stylesheet href=css/mylock.css></head><body><div id=mylock><a href=myhome.html><div class=return-img><img src=../homeCenter/images/returns.png></div></a><div id=haveLock><div class=lock-status-warp style="width:300px;height:300px;margin:0 auto"><div class=circle-warp><div class=circle-mid-warp><div class=icon-info><img src=image/icon-lock.png class=icon-lock-warp><p class="lock-status mt5">正常</p><p class=lock-dl></p></div><div class=circle-mid><div class=circle-in></div></div></div></div></div><div class="lockInfo mt20"><p class="lock-type mt10"></p><p class="lock-address mt10"></p></div><div class=lock-footer><div class=lock-changePwd id=showLockTip><span class=icon-changeWarp><img src=image/icon-cpwd.png></span><p class=lock-change-desc>修改密码</p></div><div class=lock-changePwd id=showLockPwdDt><span class=icon-changeWarp><img src=image/icon-lpwd.png></span><p class=lock-change-desc>动态密码</p></div></div><div id=dialogs><div class=js_dialog id=lockPwdDtinfo style="display: none;"><div class=weui-mask></div><div class=weui-dialog><div class="weui-dialog__bd lock-dtmm-title">动态密码</div><div class="weui-dialog__bd lock-dtmm-content" id=lock-pwd-dt></div><div class=weui-dialog__ft><a href=javascript:; class="weui-dialog__btn weui-dialog__btn_primary">我知道了</a></div></div></div></div><div class=changePwdWarp><div id=dialogs1><div class=js_dialog id=lockTipinfo style="display: none;"><div class=weui-mask></div><div class=weui-dialog><div class=weui-dialog__bd>为了保证安全，房乾不会存任何明文密码， 请牢记您的自定义密码，密码将在2分钟内 生效。</div><div class=weui-dialog__ft><a href=javascript:; class="weui-dialog__btn weui-dialog__btn_primary">确认</a></div></div></div></div><div id=dialogs2 class=input-old-Pwd><div class=js_dialog id=old-Pwd style="display: none;"><div class=weui-mask></div><div class=weui-dialog><div class="weui-dialog__bd lock-dtmm-title">请输入原密码</div><div class=weui-dialog__bd><input class=weui-input type=text id=lock-pwd-old></div><div class=weui-dialog__ft><a href=javascript:; class="weui-dialog__btn weui-dialog__btn_primary">下一步</a></div></div></div></div><div id=dialogs3 class=input-new-Pwd><div class=js_dialog id=new-Pwd style="display: none;"><div class=weui-mask></div><div class=weui-dialog><div class="weui-dialog__bd lock-dtmm-title">请输入自定义的密码</div><div class=weui-dialog__bd><input class=weui-input type=text id=lock-pwd-new></div><div class=weui-dialog__ft><a href=javascript:; class="weui-dialog__btn weui-dialog__btn_primary">确定</a></div></div></div></div></div></div><div id=noLock><div class=nolock-warp><img src=image/icon-noLock.png></div><p class=noLock-drsc>您的房间暂无智能门锁</p></div></div><script src=../public/jquery-1.8.0.min.js></script><script src=../common/js/public.js></script><script type=text/javascript src="js/loginhelper.js?v=20170915"></script><script src=js/rem.js></script><script src=https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js></script><script src=js/mylock.js></script><script src=js/api/mylockApi.js></script><script type=text/javascript class="dialog js_show">
+     $(function(){
+         var $iosDialog2 = $('#lockPwdDtinfo');
+         var $iosDialog3 = $('#lockTipinfo');
+         $('#dialogs').on('click', '.weui-dialog__btn', function(){      //查看动态密码
+             $(this).parents('.js_dialog').fadeOut(200);
+         });
+         $('#dialogs1').on('click', '.weui-dialog__btn', function(event){     //修改提示
+             var ev = ev||event;
+             ev.stopPropagation();
+             $(this).parents('.js_dialog').fadeOut(200);
+             $("#old-Pwd").fadeIn(200);
+
+         });
+         $('#dialogs2').on('click', '.weui-dialog__btn', function(event){     //输入老密码
+             var ev = ev||event;
+             ev.stopPropagation();
+             lockPwdoldStr=$("#lock-pwd-old").val();
+             if (isNull(lockPwdoldStr)){
+                 alert("请输入原密码！")
+             }else {
+                 $(this).parents('.js_dialog').fadeOut(200);
+                 $("#new-Pwd").fadeIn(200);
+             }
+         });
+         $('#dialogs3').on('click', '.weui-dialog__btn', function(event){     //输入新密码
+             var ev = ev||event;
+             ev.stopPropagation();
+             lockPwdnewStr=$("#lock-pwd-new").val();
+             if (isNull(lockPwdnewStr)){
+                 alert("请输入新密码！")
+             }else {
+                 $(this).parents('.js_dialog').fadeOut(200);
+                 changeLockPwd();
+             }
+         });
+         $('#showLockPwdDt').on('click', function(event){
+             $iosDialog2.fadeIn(200);
+         });
+         $('#showLockTip').on('click', function(event){
+             $iosDialog3.fadeIn(200);
+         });
+         $(".weui-mask").click(function () {
+             $(".changePwdWarp .js_dialog").fadeOut();
+         })
+     });
+</script></body></html>

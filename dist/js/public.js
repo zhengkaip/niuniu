@@ -1,0 +1,1 @@
+$(function(){function t(){$("body").height()<$(window).height()?($(".footer").css({position:"absolute",bottom:0,left:"50%","margin-left":"-600px"}),$("html,body").css({height:"100%"})):$(".footer").css({position:"static",left:0})}t(),$(window).resize(function(o){t()})});

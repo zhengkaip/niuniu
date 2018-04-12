@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><meta name=format-detection content="telephone=no"><title>我的预定</title><link rel=stylesheet href=css/weui.min.css><link rel=stylesheet href=../css/common.css><link rel=stylesheet href=../myHome/css/myhomeCommon.css><link rel=stylesheet href=../myHome/css/aliIcon/iconfont.css><link rel=stylesheet href=css/predetermine.css></head><body><div id="footprintPage bgff"><a onclick=history.back()><div class=return-img><img src=../homeCenter/images/returns.png></div></a><div class="tab__panel bgff mt10"><div class=content-show id=fangyuanShoucang></div></div></div><div><div class=weui-mask id=iosMask style="opacity: 0; display: none;"><div class=weui-mask_transparent></div><div class=weui-toast><i class="weui-loading weui-icon_toast"></i></div></div><div class=weui-actionsheet id=iosActionsheet><div class=weui-actionsheet__title><p class="weui-actionsheet__title-text bgff" style="padding: 15px 0 ;text-align: center;border-bottom: 1px solid #f1f1f1;font-size: 16px">选择付款方式</p></div><div class=weui-actionsheet__menu><div class=weui-actionsheet__cell id=wxPay><span class=icon><img src=../images/wxpay.jpg></span> <span class=payName>微信</span></div><div class=weui-actionsheet__cell id=cmPay><span class=icon><img src=../images/alipay.jpg></span> <span class=payName>春眠支付</span></div><div class=weui-actionsheet__cell id=ylPay><span class=icon><img src=../images/yinlianpay.jpg></span> <span class=payName>银联支付</span></div></div><div class=weui-actionsheet__action><div class=weui-actionsheet__cell style="text-align: center" id=iosActionsheetCancel>取消</div></div></div></div><div id=loadingToast style="opacity: 0; display: none;"><div class=weui-mask_transparent></div><div class=weui-toast><i class="weui-loading weui-icon_toast"></i><p class=weui-toast__content>数据加载中</p></div></div><script src=../public/jquery-1.8.0.min.js></script><script src=../common/js/public.js></script><script type=text/javascript src="../myHome/js/loginhelper.js?v=20170817"></script><script src=../myHome/js/rem.js></script><script src=https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js></script><script>
+        isLogin();
+    </script><script type=text/javascript src="js/predetermine.js?v=20170817"></script><script type=text/javascript src=../perCenter/js/predetermineApi.js></script><script type=text/javascript class="actionsheet js_show">
+        // ios
+        $(function () {
+            var $iosActionsheet = $('#iosActionsheet');
+            var $iosMask = $('#iosMask');
+            function hideActionSheet() {
+                $iosActionsheet.removeClass('weui-actionsheet_toggle');
+                $iosMask.css("opacity", 0);
+                $iosMask.fadeOut(200);
+            }
+            $iosMask.on('click', hideActionSheet);
+            $('#iosActionsheetCancel').on('click', hideActionSheet);
+            $("#showIOSActionSheet").on("click", function () {
+                $iosActionsheet.addClass('weui-actionsheet_toggle');
+                $iosMask.css("opacity", 1);
+                $iosMask.fadeIn(200);
+            });
+        });
+    </script></body></html>

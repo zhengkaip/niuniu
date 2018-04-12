@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><meta name=format-detection content="telephone=no"><title>维修申请</title><link rel=stylesheet href=../perCenter/css/weui.min.css><link rel=stylesheet href=css/myhomeCommon.css><link rel=stylesheet type=text/css href="../public/ext/webUploader/webuploader.css?v=2017062701"><link rel=stylesheet href=css/addService.css></head><body><div id=addService><div class=return-img onclick=returnPage()><img src=../homeCenter/images/returns.png></div><div class="addClean-title bgff"><span class="dingwei vertical"><img src=image/icon-weixiu.png></span> <span class="addClean-address vertical"></span></div><div class="addClean-content mt20 bgff"><div class=content-title><div class=fl><span class=addTime>预约上门时间</span> <span class=fontColor>*</span></div><span class="vertical fr">></span> <input class="weui-input vertical serviceTime fr" type=datetime-local id=yuyueTime><div style="clear: both"></div></div><div class=addText><p class=mt10>故障描述<span class=fontColor>*</span></p><textarea id=addClean-info class=mt10 placeholder=请填写 style="resize: none"></textarea></div></div><div class="ts_info bgff mt10"><p class=baojie-local style="margin-bottom: 0;">上传图片</p><div id=upload_pic></div><div class="uploadImg mt10"><div id=filePicker><img src=../images/baojietupian.png id=tupianId style="padding: 25px;border: 1px solid #DFE0E0;"></div></div><div style="clear: both"></div></div><a href=javascript:; class="weui-btn weui-btn_primary addClean" onclick=saveWeixiu()>提交</a></div><div id=toastSuccess><div class=weui-mask_transparent></div><div class=weui-toast><i class="weui-icon-success-no-circle weui-icon_toast"></i><p class=weui-toast__content>已提交</p></div></div><div id=loadingToast style="display: none;"><div class=weui-mask_transparent></div><div class=weui-toast><i class="weui-loading weui-icon_toast"></i><p class=weui-toast__content>数据加载中</p></div></div><script src=../public/jquery-1.8.0.min.js></script><script src=../common/js/public.js></script><script src=js/tool.js></script><script type=text/javascript src="js/loginhelper.js?v=20170829"></script><script type=text/javascript src="../public/ext/webUploader/webuploader.js?v=20170829"></script><script type=text/javascript src="js/addService.js?v=20170829"></script><script type=text/javascript src="js/api/addServiceApi.js?v=20170829"></script><script src=https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js></script><script type=text/javascript class="picker js_show">
+    $('#showDatePicker').on('click', function () {
+        weui.datePicker({
+            start: 2017,
+            end: new Date().getFullYear(),
+            onChange: function (result) {
+                console.log(result);
+            },
+            onConfirm: function (result) {
+                console.log(result);
+                var time=result.join("-");
+                $("#showDatePicker").html(time);
+            }
+        });
+    });</script></body></html>
