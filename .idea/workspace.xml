@@ -2,7 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="647f7edc-f67f-4c05-8082-a6d36d14c446" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/userCenter.html" afterPath="$PROJECT_DIR$/src/userCenter.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/contcatUs.html" afterPath="$PROJECT_DIR$/src/contcatUs.html" />
+      <change beforePath="$PROJECT_DIR$/src/index1.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/issueIntention.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lookAllPerson.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/lookContactInformation.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/app.ca27c20626a7d93c5132f71d8b2c527f.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/app.ca27c20626a7d93c5132f71d8b2c527f.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/common.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/fonts/iconfont.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/fonts/iconfont.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/fonts/iconfont.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/fonts/iconfont.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/fonts/iconfont.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/fonts/sell-icon.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/fonts/sell-icon.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/fonts/sell-icon.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/fonts/sell-icon.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/iconfont.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/reset.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/app.678e8dea2cc18bff09f8.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/app.678e8dea2cc18bff09f8.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/manifest.4712b346776462691f62.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/manifest.4712b346776462691f62.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/vendor.c8602ba982cd7cf867be.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/vendor.c8602ba982cd7cf867be.js.map" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -138,16 +163,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525859283742</updated>
-      <workItem from="1525859285354" duration="202000" />
+      <workItem from="1525859285354" duration="418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202000" />
+    <option name="totallyTimeSpent" value="418000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="226" y="37" width="1163" height="735" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24956217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -158,7 +182,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
